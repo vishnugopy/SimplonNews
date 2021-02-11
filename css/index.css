@@ -1,0 +1,143 @@
+
+header {
+    height: 25vh;
+    width: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255)),
+    url(../assets/images/foot\ red.jpg) bottom center no-repeat;
+    background-size: 100%;
+}
+
+.loginsection {
+    width: 90%;
+    margin: 0 auto;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.loginsection img {
+    width: 50%;
+    margin: 5% auto;
+}
+
+.loginsection form {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+}
+
+.loginsection form div {
+    margin: 4% 0%;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+}
+
+.loginsection form div .input {
+    border-radius: 5px;
+    height: 30px;
+    padding: 1%;
+    margin-top: 1%;
+    border: 1px solid var(--red);
+}
+
+
+
+.buttons {
+    height: 35px;
+    border: none;
+    background: var(--red);
+    color: var(--white);
+    width: 100%;
+    margin: 0%;
+}
+
+
+.buttons:hover{
+   opacity: 0.8;
+   cursor:pointer;
+}
+
+.black {
+    background-color: var(--black);
+    border: none;
+}
+
+
+
+
+.loginsection a {
+    text-decoration: none;
+    color: cornflowerblue;
+    text-align: center;
+    margin: 3% 0%;
+}
+
+.loginsection p {
+    color: var(--black);
+    text-align: center;
+    margin: 3% 0%;
+    opacity: 0.5;
+}
+
+@media screen and (min-width: 1200px) {
+
+    main {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    header{
+        height: 35vh;
+    }
+
+    .loginsection {
+        width: 80%;
+        font-size: 1.1vw;
+        
+    }
+
+
+    .loginsection img {
+        width: 30%;
+        margin: 2% auto;
+       
+    }
+
+    .loginsection form {
+        width: 50%;
+        margin: 0% auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .loginsection form div {
+        margin: 2% 0%;
+        padding: 1%;
+    }
+
+    .loginsection form div .input {
+        font-size: 1vw;
+        height: 50px;
+        margin: 1% 0%;
+    }
+
+    .buttons{
+        height: 50px;
+        font-size: 1vw;
+        padding: 0%;
+        width: 50%;
+    }
+
+    .loginsection p {
+       font-size: 0.8vw;
+    }
+
+    .loginsection a {
+        font-size: 0.8vw;
+     }
+
+}

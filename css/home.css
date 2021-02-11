@@ -1,0 +1,78 @@
+main{
+   width:90%;
+   margin: 0 auto;
+}
+.homesection{
+    width: 100%;
+    padding: 10% 0;
+}
+
+.homesection img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.homesection h2 {
+    width: 100%;
+}
+
+
+
+.homesection .post {
+    background-color: rgba(189, 189, 189, 0.05);
+    display: flex;
+    justify-content: flex-start;
+    padding: 4%;
+    margin: 5% 0%;
+    flex-direction: column;
+    border-radius: 5px;
+    border: 0.5px solid #ce003426;
+}
+
+.homesection .post h4{
+    width: 100%;
+    text-align: right;
+    padding: 0% 5% 0% 0%;
+    color: var(--red);
+}
+
+.homesection .post .titreandresum{
+    width: 100%;
+    padding: 1%;
+}
+.homesection p {
+    display: none;
+}
+
+
+
+@media screen and (min-width: 1200px) {
+
+    main{
+        width:80%;
+        margin: 0 auto;
+     }
+     .homesection{
+        padding: 3% 0;
+     }
+
+    .homesection .post {
+        flex-direction: row;
+        padding: 2% 0.3%;
+        border-radius: 10px;
+    }
+
+    .homesection img {
+        width: 400px;
+        height: auto;
+        margin: 0% 2%;
+    }
+
+    .homesection p {
+        display: block;
+    }
+
+
+
+}
