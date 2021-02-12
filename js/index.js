@@ -1,11 +1,17 @@
 let emailDiv = document.querySelector("#email")
 let passwordDiv = document.querySelector("#password")
 let loginDiv = document.querySelector("#loginbutton")
+let errorme = document.querySelector(".errorme");
+let errormessgage = document.querySelector(".errormessgage");
+let close = document.querySelector(".errormessgage i")
 
 let createAccountDiv = document.querySelector("#createAccount")
 let email;
 let password;
 
+close.addEventListener("click" , ()=>{
+    errormessgage.style.display = "none"
+})
 
 loginDiv.addEventListener("click", (e) => {
     email = emailDiv.value
@@ -42,16 +48,39 @@ loginDiv.addEventListener("click", (e) => {
                     .then(function(data) {
                         if (response.status == 400) {
                             console.log(data);
+                            if (email == null || email =="" || password == null || password == "") {
+                                errorme.innerHTML = "Remplissez tous les champs requis";  
+                            }else{
+                                errorme.innerHTML = data["error"] ;
+                            }
+                            errormessgage.style.display = "block";
+
+
                             // gestion erreur données envoyer a la requette
                         } else if (response.status == 403) {
                             console.log(data);
+
+                            if (email == null || email =="" || password == null || password == "") {
+                                errorme.textContent = "Remplissez tous les champs requis";  
+                            }else{
+                                errorme.innerHTML = data["error"] ;
+                            }
+                            errormessgage.style.display = "block";
                             // gestion erreur authentification
                         } else {
                             console.log(data);
                             // console.log();
                             let tokenResponse = data["token"]
                             sessionStorage.setItem("token", tokenResponse);
-                            document.location.href = "./home.html";
+                            
+                            errormessgage.style.display = "block";
+                            errormessgage.classList.add("greenmessage");
+                            errormessgage.classList.remove("errormessgage");
+                            errorme.textContent = "Connexion en 2 secondes";  
+                            setInterval(() => {
+                                document.location.href = "./home.html";
+                                
+                            }, 2000);
                         }
                     })
                     .catch(function(data_parsing_error) {

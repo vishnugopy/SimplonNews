@@ -1,13 +1,17 @@
 @font-face {
-    font-family: 'Mulish', sans-serif;
-    src: url("../assets/fonts/Mulish-Italic-VariableFont_wght.ttf") format("ttf");
-}
+    font-family: "Mulish";
+    src: url("../assets/fonts/Mulish-VariableFont_wght.ttf") format("truetype"),
+         url("../assets/fonts/Mulish-Italic-VariableFont_wght.ttf") format("ttf");
+  }
+/* @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */ */
 
 * {
-    font-family: 'Mulish', sans-serif;
+    font-family: 'Mulish';
 }
 
+
 body {
+    font-family: 'Mulish', sans-serif;
     margin: 0;
     height: 100%;
     width: 100%;
@@ -24,6 +28,67 @@ body {
 color: var(--red);
 margin: 0 1%;
 }
+
+.errormessgage{
+    display: none;
+    background-color: var(--white);
+    color: var(--white);
+    margin: 3%;
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: auto;
+    padding: 1%;
+    border-radius: 5px;
+    border: 1px solid #ce00343f;
+}
+
+.errormessgage i{
+    margin: 1%;
+    color: var(--red);
+    float: right;
+ }
+ 
+ .errormessgage p{
+     color: var(--red);
+     text-align: center;
+     font-family: 'Mulish', sans-serif;
+     padding: 1% 0.1%;
+     border-left: 3px solid var(--red);
+  }
+ 
+
+.greenmessage{
+    display: none;
+    background-color: var(--white);
+    margin: 3%;
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: auto;
+    padding: 1%;
+    border-radius: 5px;
+    border: 1px solid #00ff40;
+}
+
+.greenmessage i{
+    color: #00ff40;
+    float: right;
+ }
+ 
+ .greenmessage p{
+     color: #00ff40;
+     text-align: center;
+     padding: 1% 0.1%;
+     border-left: 3px solid #00ff40;
+  }
+
+
+
 nav {
     background-color: var(--white);
     height: 5vh;
@@ -123,6 +188,7 @@ footer {
   footer p{
       text-align: center;
       color: var(--red);
+      
   }
   footer div.footer-links {
     font-size: 18px;
@@ -167,6 +233,14 @@ footer {
 
 @media screen and (min-width: 1200px) {
 
+    .errormessgage{
+        width: 30%;
+    }
+
+    .greenmessage{
+        width: 30%;
+
+    }
     nav {
         background-color: var(--white);
         height: 5vh;
