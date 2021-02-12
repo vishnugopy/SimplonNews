@@ -31,7 +31,7 @@ fetch("https://simplonews.brianboudrioux.fr/articles", fetch_config)
                         str +=
                         `
                         <div class="post" id="${data["articles"].indexOf(arr[i])}">
-                        <img src="${data["articles"][i]["img"]}">
+                        <img src="${data["articles"][i]["img"]}" alt="${data["articles"][i]["title"]} image">
                         <div class="titreandresum">
                         <h2>${data["articles"][i]["title"]}</h2>
                         <h4>${data["articles"][i]["author"]}</h4>
@@ -67,5 +67,32 @@ fetch("https://simplonews.brianboudrioux.fr/articles", fetch_config)
             // Cas erreur server (API)
             console.log(server_errors);
         })
+
+
+        
+        window.onload = setupDisconnectFunction()
+
+        function disconnectUserAndRedirectToLoginPage() {
+        
+            sessionStorage.clear()
+            document.location.href = "./index.html";
+        }
+        
+        function setupDisconnectFunction() {
+            let disconnectButton = document.querySelectorAll(".disconnectButton")
+            disconnectButton.forEach(element => {
+                element.addEventListener("click", disconnectUserAndRedirectToLoginPage)
+            });
         
         
+        }        
+        function redirectToLoginPage() {
+            let tokenCheck = sessionStorage.getItem("token")
+        
+        
+            if (tokenCheck == null) {
+                disconnectUserAndRedirectToLoginPage()
+            }
+        }
+        
+        redirectToLoginPage();

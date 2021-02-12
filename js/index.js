@@ -76,11 +76,11 @@ loginDiv.addEventListener("click", (e) => {
                             errormessgage.style.display = "block";
                             errormessgage.classList.add("greenmessage");
                             errormessgage.classList.remove("errormessgage");
-                            errorme.textContent = "Connexion en 2 secondes";  
+                            errorme.textContent = "Connecté !";  
                             setInterval(() => {
                                 document.location.href = "./home.html";
                                 
-                            }, 2000);
+                            }, 500);
                         }
                     })
                     .catch(function(data_parsing_error) {

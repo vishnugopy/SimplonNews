@@ -11,6 +11,9 @@ main{
     width: 100%;
     height: auto;
     border-radius: 10px;
+    background-color:#ce00346e;
+    text-align: center;
+    color: var(--white);
 }
 
 .homesection h2 {
@@ -28,6 +31,7 @@ main{
     flex-direction: column;
     border-radius: 5px;
     border: 0.5px solid #ce003426;
+    cursor: pointer;
 }
 
 .homesection .post h4{

@@ -10,12 +10,12 @@ nav.innerHTML=
 
 <div class="navigationhidden">
     <a href="home.html">Accueil</a>
-    <a href="index.html">Se déconnecter</a>
+    <a class="disconnectButton" href="index.html">Se déconnecter</a>
 </div>
 
 <div class="navigationphone">
     <a href="home.html">Accueil</a>
-    <a href="index.html">Se déconnecter</a>
+    <a class="disconnectButton"  href="index.html">Se déconnecter</a>
 </div>`;
 
 

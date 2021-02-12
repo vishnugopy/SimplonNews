@@ -1,10 +1,9 @@
 var passid = sessionStorage.getItem("passid");
 // var passid = mainid-1;
 console.log(passid);
-
+var token = sessionStorage.getItem("token");
        
 
-let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTUsImZpcnN0TmFtZSI6bnVsbCwibGFzdE5hbWUiOm51bGwsImVtYWlsIjoib3dvVXNlckB0ZXN0LmZyIiwicGFzc3dvcmQiOiIkMmIkMTAkak45SkhRbmhkUVZ1ekszZndwRGJRZWxMUjg3OU9zeHFSdkR1TXVULlZwdGdHNlZTOTkxWnUiLCJjcmVhdGVkQXQiOiIyMDIxLTAyLTEwVDEzOjMwOjQ4LjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDIxLTAyLTEwVDEzOjMwOjQ4LjAwMFoiLCJpYXQiOjE2MTI5NjM5ODB9.JYF5P8FTHl3UHszkjC613vztA9bCFqKglo6p3P_bW0o";
 let fetch_config = {
     method: "GET",
     headers: {
@@ -62,6 +61,32 @@ fetch("https://simplonews.brianboudrioux.fr/articles", fetch_config)
 
 
 
- 
+     
+        window.onload = setupDisconnectFunction()
+
+        function disconnectUserAndRedirectToLoginPage() {
+        
+            sessionStorage.clear()
+            document.location.href = "./index.html";
+        }
+        
+        function setupDisconnectFunction() {
+            let disconnectButton = document.querySelectorAll(".disconnectButton")
+            disconnectButton.forEach(element => {
+                element.addEventListener("click", disconnectUserAndRedirectToLoginPage)
+            });
+        
+        
+        }
+        function redirectToLoginPage() {
+            let tokenCheck = sessionStorage.getItem("token")
+        
+        
+            if (tokenCheck == null) {
+                disconnectUserAndRedirectToLoginPage()
+            }
+        }
+        
+        redirectToLoginPage()
         
 
